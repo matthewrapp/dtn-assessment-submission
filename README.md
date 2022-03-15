@@ -1,8 +1,9 @@
 # DTN Frontend/Fullstack Development Challenge
 
-We would like you to build a React application utilizing Node.js and Express to create the supporting API. The project will also use a MongoDB database. This may sound like a lot, but we are using a boilerplate project to get you up and running. If you encounter any issues while working through this challenge please share with us what they were and how you overcame them or worked around them. The requirements for the application are listed below in the Technical Requirements section.  There are also stretch goals if you are interested.
+We would like you to build a React application utilizing Node.js and Express to create the supporting API. This may sound like a lot, but we are using a boilerplate project to get you up and running. If you encounter any issues while working through this challenge please share with us what they were and how you overcame them or worked around them. The requirements for the application are listed below in the Technical Requirements section.  There are also stretch goals if you are interested.
 
 This boilerplate is built using the following libraries:
+
 * React + Redux
 * Webpack
 * Styled Components
@@ -33,6 +34,7 @@ This boilerplate is built using the following libraries:
 * Allow sorting by column on the student list
 * Show form validation client side making student first and last name required
 * Implement TailwindCSS for styling
+* Implement a MongoDB database to store your student records
 
 ### Configuration
 - **Platform:** node
