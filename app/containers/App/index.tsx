@@ -13,13 +13,17 @@ import { hot } from 'react-hot-loader/root';
 
 import HomePage from 'containers/HomePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
+import StudentsPage from 'containers/StudentsPage/Loadable';
 
 import GlobalStyle from '../../global-styles';
+import '../../tw-styles/output.css';
+
 function App() {
   return (
     <>
       <Router>
         <Switch>
+          <Route exact path="/students" component={StudentsPage} />
           <Route exact path="/" component={HomePage} />
           <Route component={NotFoundPage} />
         </Switch>

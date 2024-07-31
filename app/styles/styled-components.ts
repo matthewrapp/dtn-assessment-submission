@@ -21,6 +21,7 @@ const {
   createGlobalStyle,
   keyframes,
   ThemeProvider,
+  //@ts-ignore
 } = styledComponents as styledComponents.ThemedStyledComponentsModule<
   IThemeInterface
 >;

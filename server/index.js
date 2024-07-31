@@ -12,10 +12,18 @@ const ngrok =
     ? require('ngrok')
     : false;
 const { resolve } = require('path');
+const connecToMongo = require('./db/mongodb');
+
+// create express app
 const app = express();
 
+// need to parse incoming requests in a middleware before your handlers
+// available under the req.body property.
+app.use(express.json({ limit: '10mb' }));
+app.use(express.urlencoded({ extended: true }));
+
 // If you need a backend, e.g. an API, add your custom backend-specific middleware here
-// app.use('/api', myApi);
+app.use('/api/students', require('./routes/students'));
 
 // In production we need to pass these values in instead of relying on webpack
 setup(app, {
@@ -53,4 +61,7 @@ app.listen(port, host, async err => {
   } else {
     logger.appStarted(port, prettyHost);
   }
+
+  // connect to mongodb
+  await connecToMongo();
 });

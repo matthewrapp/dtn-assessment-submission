@@ -64,10 +64,12 @@ const render = (messages: any) => {
   ReactDOM.render(<ConnectedApp messages={messages} />, MOUNT_NODE);
 };
 
+// @ts-ignore
 if (module.hot) {
   // Hot reloadable translation json files
   // modules.hot.accept does not accept dynamic dependencies,
   // have to be constants at compile-time
+  // @ts-ignore
   module.hot.accept(['./i18n'], () => {
     ReactDOM.unmountComponentAtNode(MOUNT_NODE);
     render(translationMessages);

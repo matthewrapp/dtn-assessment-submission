@@ -1,54 +1,70 @@
-# DTN Frontend/Fullstack Development Challenge
+# DTN Frontend/Fullstack Development Assessment
 
-We would like you to build a React application utilizing Node.js and Express to create the supporting API. This may sound like a lot, but we are using a boilerplate project to get you up and running. If you encounter any issues while working through this challenge please share with us what they were and how you overcame them or worked around them. The requirements for the application are listed below in the Technical Requirements section.  There are also stretch goals if you are interested.
+- Completed by <b>Matthew Rapp</b>
+- Completed on July 30, 2024
+- [Watch video presentation of the working application](https://www.loom.com/share/be8a31ea2d9e4d16897ff9a36884a5de?sid=8c2662c7-3b3e-495a-9319-13edc08449d4)
 
-This boilerplate is built using the following libraries:
+## Getting Started
 
-* React + Redux
-* Webpack
-* Styled Components
-* Express
-* Webpack
+- Command: `npm install`
+  - Install all the packages associated to this application.
+- Navigate to `/server/db/mongodb.js` to change out the mongodb connection ENV, if necessary.
+- Command: `npm run dev`
+  - Once installed, should be able to get the application (client & server) up and running.
+- Navigate in the browser to http://localhost:3000/students to see the changes.
 
+## Features Completed
 
-## Technical Requirements
+- Show a list of students, displaying their first name, last name, email, age, and grade
+- The user can create/add a new student
+- The user can edit an existing student
+- The user can delete a student
+  - Before the user can be deleted, a confirmation dialog displays making sure the user really wants to delete the student
+- The student list allows for pagination
+- The student list allows for sorting
+- The student list allows for filtering
+- Client-side form validation
+  - First name and last name fields are required
+  - The email field must be a valid email
+  - The age field must be 0 or greater
+  - Will display errors on the form on submission if the form is incorrect
 
-* Show a list of students with the following information:
-    * First Name
-    * Last Name
-    * Email
-    * Age
-    * Grade (1st, 2nd, 3rd, etc...)
-* The user should be able to add a new student
-* The user should be able to edit an existing student record
-* The user should be able to delete a student
-* Before a student can be removed, a confirmation dialog should be displayed that asks the user if they really want to delete the student
-* Create a mixin for rem font sizes, and apply it to all headings in correct scss partial. 
-* Typescript should be used throughout
+## Tools and Technologies I Used and Implemented
 
-## Stretch Goals
+- Typescript
+- Javascript
+- React
+- Node / Express
+- Tailwind
+- Jest
+- Mongodb / Mongoose
+- Webpack (build tool)
 
-* Demonstrate unit tests on your API controllers and/or React components
-* Add paging to the student list
-* Add filtering to the student list
-* Allow sorting by column on the student list
-* Show form validation client side making student first and last name required
-* Implement TailwindCSS for styling
-* Implement a MongoDB database to store your student records
+### Other packages
 
-### Configuration
-- **Platform:** node
-- **Framework**: express
-- **JavaScript Framework**: react
-- **Build Tool**: webpack
+- nodemon (https://www.npmjs.com/package/nodemon)
+- dotenv (https://www.npmjs.com/package/dotenv)
 
-### License
-The MIT License (MIT)
+## Notable commands
 
-Copyright (c) 2019 Maximilian Stoiber
+- `npm run dev`
+  - Command used to run the application in development, using 'nodemon' for automatic server restarts whenever the file(s) change.
+- `npm run tailwind:watch`.
+  - Due to difficulties getting Tailwind to work using PostCSS in this repository, I decided to just use Tailwind's CLI to scan the files for classes and build out an output css file.
+  - You can see both the input.css file and the output.css file here: `/app/tw-styles`.
+- `npm run test:student`
+  - I built a command to only test my changes and the features I added to this repository.
+  - You can view my test code here: `/app/containers/StudentsPage/tests`.
+  - I mainly wrote tests to make sure the api was working correctly with the client.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+## Notes
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+- Ran into some difficulties getting the repo started initally.
+  - I was running Node version 20.16.0, but had to downgrade to Node version 16.20.2 to get it started.
+  - If the application won't start for you, try running Node version 16 if not already.
+- Once I got the application started, I realized some of the type errors I was getting was due to an older version of Typescript. So I upgrade Typescript and some of its' related packages.
+  - Package `typescript` from "3.8.2" to "4.8"
+  - Package `typescript-plugin-styled-components` from "1.4.4" to "3.0.0"
+  - Package `eslint-plugin-import` from "2.20.1" to "2.22.1"
+- From there, development seemed to go super smooth up until trying to automate some tests with "Jest" and running the `npm run test` command.
+- Due to not being able to get the boilerplate tests (`npm run test`) without throwing errors, I created another command, (`npm run test:student`) to demonstrate my knowledge for writing and implement tests. Run that command to test all of the features and work I added to this repository.

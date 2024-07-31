@@ -15,7 +15,7 @@ import messages from './messages';
 
 export default function HomePage() {
   return (
-    <h1>
+    <h1 className="text-3xl font-bold">
       <FormattedMessage {...messages.header} />
     </h1>
   );
