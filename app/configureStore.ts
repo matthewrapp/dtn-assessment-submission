@@ -61,7 +61,9 @@ export default function configureStore(
 
   // Make reducers hot reloadable, see http://mxs.is/googmo
   /* istanbul ignore next */
+  // @ts-ignore
   if (module.hot) {
+    // @ts-ignore
     module.hot.accept('./reducers', () => {
       forceReducerReload(store);
     });

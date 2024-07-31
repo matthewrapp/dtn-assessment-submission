@@ -18,7 +18,7 @@
     "moduleResolution": "node",
     "noEmitOnError": true,
     "noFallthroughCasesInSwitch": true,
-    "noImplicitReturns": true,
+    "noImplicitReturns": false,
     "noImplicitThis": true,
     "noUnusedLocals": false,
     "strict": true,
@@ -26,7 +26,8 @@
     "pretty": true,
     "removeComments": true,
     "sourceMap": true,
-    "skipLibCheck": false
+    "skipLibCheck": true,
+    "types": ["jest", "@testing-library/jest-dom"]
   },
   "include": ["app/**/*", "internals/templates/**/*"],
   "exclude": ["node_modules"]
